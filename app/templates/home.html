@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}CodeCarrots Challenge{% endblock title %}
+
+{% block body_class %}home{% endblock body_class %}
+
+{% block body %}
+    <div class="container">
+      <div class="col-md-offset-1 col-md-10">
+        <div class="row">
+          <div class="col-md-offset-3 col-md-6">
+            <img src="{% static 'site/img/tcp.png' %}" class="img-splash" alt="(Confused) Turtle, Carrot, Python...">
+          </div>
+        </div>
+      </div>
+    </div><!-- /.container -->
+
+    <div class="container">
+      <div class="jumbotron">
+        <h1>CodeCarrots Challenge!</h1>
+        <p>Zmierz się z zestawem przygotowanych na dzisiaj zadań programistycznych - zobacz ile dasz radę rozwiązać!</p>
+        {% if user.is_authenticated %}
+        <p><a class="btn btn-primary btn-lg" href="{% url 'tasks_home' %}" role="button">Przejdź do zadań &raquo;</a></p>
+        {% else %}
+        <p><a class="btn btn-primary" href="{% url 'account_signup' %}" role="button">Zarejestruj</a> lub <a class="btn btn-primary" href="{% url 'account_login' %}" role="button">zaloguj się</a> aby uzyskać dostęp do zadań.</p>
+        <p></p>
+        {% endif %}
+      </div>
+    </div>
+{% endblock body %}

@@ -1,0 +1,26 @@
+{% extends "tasks/task_view_base.html" %}
+
+{% block task_title %}{{ task.title }}{% endblock task_title %}
+
+{% block task_body %}
+<h1>{{ task.title }}</h1>
+<div class="task-description">{{ task.markdown_doc|safe }}</div>
+{% if task.has_challenge %}
+<div class="task-files">
+  <p>Plik z zadaniem: <a class="btn btn-default" href="{% url 'task_files' task_id %}" role="button"><span class="fa fa-file-o"></span> task.py</a></p>
+</div>
+<div>
+  <form id="solution-form" class="form-inline" role="form" method="post">
+    {% csrf_token %}
+    <div class="form-group{% if code_invalid %} has-error{% endif %}">
+      <div class="input-group input-group-lg">
+        <span class="input-group-addon"><i class="fa fa-key"></i></span>
+        <label class="sr-only" for="code">Rozwiązanie</label>
+        <input type="text" class="form-control" id="id_code" placeholder="Podaj rozwiązanie..." name="code"{% if form.code.value %} value="{{ form.code.value }}" {% endif %}>
+        <span class="input-group-btn"><button type="submit" class="btn btn-primary">Sprawdź</button></span>
+      </div>
+    </div>
+  </form>
+</div>
+{% endif %}
+{% endblock task_body %}
