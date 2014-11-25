@@ -21,4 +21,5 @@ projektu i umieszcza w pliku `settings.py`).
 
       $ export SECRET_KEY=...
       $ cd app
+      $ python ./manage.py migrate
       $ python ./manage.py runserver
