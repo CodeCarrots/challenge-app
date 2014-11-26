@@ -53,9 +53,10 @@ class SumNSliceTask(Task):
     variable_name = 'numbers'
 
     def generate_data(self):
-        random.seed(self.seed)
-        data = [random.randrange(10**13, 10**14)
-                for _ in range(random.randrange(80, 121))]
+        r = random.Random()
+        r.seed(self.seed)
+        data = [r.randrange(10**13, 10**14)
+                for _ in range(r.randrange(80, 121))]
         return data
 
     def solutions(self):
