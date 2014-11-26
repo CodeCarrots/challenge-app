@@ -45,7 +45,7 @@ class OrderedChaosTask(Task):
 
     codewords = [
         'marchew',
-        'lampion'
+        'lampion',
         'beton',
         'figaro',
         'mozart',
