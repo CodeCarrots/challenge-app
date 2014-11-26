@@ -116,6 +116,14 @@ class Task:
         return []
 
 
+    def is_solution(self, attempt):
+        '''This method should return True if the given argument is a valid
+        solution for the current challenge.
+        '''
+
+        return attempt.strip().lower() in self.solutions()
+
+
     @classmethod
     def get_doc(cls):
         return textwrap.dedent(cls.__doc__)

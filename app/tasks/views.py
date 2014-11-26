@@ -26,7 +26,7 @@ def task(request, task_key):
         form = SolutionForm(request.POST)
         if form.is_valid():
             code = form.cleaned_data['code']
-            if code in task.solutions():
+            if task.is_solution(code):
                 if task_key not in user_keys:
                     new_key = UnlockedKey(user=request.user, key=task_key)
                     new_key.save()
