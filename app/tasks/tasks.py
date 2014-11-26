@@ -79,8 +79,17 @@ class WellDone(Task):
     has_challenge = False
 
 
+from .taskpack01.onlydots import OnlyDotsTask
+from .taskpack01.orderchaos import OrderedChaosTask
+from .taskpack01.foldnfind import FoldNFindTask
+from .taskpack01.dictworm import DictWormTask
+
 tasks = TaskList([
     (START_KEY, SumNSliceTask, 'sumnslice'),
+    ('sumnslice', OnlyDotsTask, 'onlydots'),
+    ('onlydots', OrderedChaosTask, 'orderchaos'),
+    ('orderchaos', FoldNFindTask, 'foldnfind'),
+    ('foldnfind', DictWormTask, 'dictworm'),
     # ...
-    ('sumnslice', WellDone, 'welldone'),
+    ('dictworm', WellDone, 'welldone'),
 ])
