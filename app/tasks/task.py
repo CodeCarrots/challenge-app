@@ -11,6 +11,13 @@ def format_data(var_name, data):
 
     tmp_var = ' ' * max(len(var_name) - 2, 0)
     var_template = '{var_name: <2} = {data}'
+
+    # need to add wrapping parentheses for long strings - pprint
+    # breaks them python3-style now...
+    if isinstance(data, str) and len(var_name) + len(data) >= 73:
+        var_template = '{var_name: <2} = ({data})'
+        tmp_var += ' '
+
     pretty_data = pprint.pformat({tmp_var: data}, compact=True, indent=1)
     return var_template.format(var_name=var_name,
                                data=pretty_data[len(tmp_var)+5:-1])
