@@ -83,6 +83,8 @@ from .taskpack01.onlydots import OnlyDotsTask
 from .taskpack01.orderchaos import OrderedChaosTask
 from .taskpack01.foldnfind import FoldNFindTask
 from .taskpack01.dictworm import DictWormTask
+from .taskpack01.lizardspock import LizardSpockTask
+from .taskpack01.anagrams import AnagramsTask
 
 tasks = TaskList([
     (START_KEY, SumNSliceTask, 'sumnslice'),
@@ -90,6 +92,8 @@ tasks = TaskList([
     ('onlydots', OrderedChaosTask, 'orderchaos'),
     ('orderchaos', FoldNFindTask, 'foldnfind'),
     ('foldnfind', DictWormTask, 'dictworm'),
+    ('dictworm', LizardSpockTask, 'spockagain'),
+    ('spockagain', AnagramsTask, 'gnaraamy'),
     # ...
-    ('dictworm', WellDone, 'welldone'),
+    ('gnaraamy', WellDone, 'welldone'),
 ])
