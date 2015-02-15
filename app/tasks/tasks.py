@@ -38,31 +38,6 @@ class TaskList:
 START_KEY = '_start'
 
 
-class SumNSliceTask(Task):
-    '''
-    Dodaj do siebie wszystkie elementy podanej listy a następnie z
-    otrzymanej sumy wybierz co drugą cyfrę rozpoczynając od cyfry
-    najbardziej znaczącej - wybrane cyfry złącz w jeden ciąg w
-    oryginalnej kolejności.
-    '''
-
-    title = "Sum'n'Slice"
-
-    success_msg = 'Bardzo dobrze. To nie było takie trudne, prawda?'
-
-    variable_name = 'numbers'
-
-    def generate_data(self):
-        r = random.Random()
-        r.seed(self.seed)
-        data = [r.randrange(10**13, 10**14)
-                for _ in range(r.randrange(80, 121))]
-        return data
-
-    def solutions(self):
-        return [str(sum(self.generate_data()))[::2]]
-
-
 class WellDone(Task):
     '''
     Na razie nie ma więcej zadań do rozwiązania ale możesz rozejrzeć
@@ -79,6 +54,7 @@ class WellDone(Task):
     has_challenge = False
 
 
+from .taskpack01.sumnslice import SumNSliceTask
 from .taskpack01.onlydots import OnlyDotsTask
 from .taskpack01.orderchaos import OrderedChaosTask
 from .taskpack01.foldnfind import FoldNFindTask
