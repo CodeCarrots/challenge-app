@@ -54,6 +54,12 @@ class WellDone(Task):
     has_challenge = False
 
 
+from .taskpack01.mathremains import MathRemainsTask
+from .taskpack01.asubstituteof import ASubstituteOfTask
+from .taskpack01.evenslice import EvenSliceTask
+from .taskpack01.mixstring import MixStringTask
+from .taskpack01.entanglingevenmore import EntanglingEvenMoreTask
+
 from .taskpack01.sumnslice import SumNSliceTask
 from .taskpack01.onlydots import OnlyDotsTask
 from .taskpack01.orderchaos import OrderedChaosTask
@@ -63,13 +69,19 @@ from .taskpack01.lizardspock import LizardSpockTask
 from .taskpack01.anagrams import AnagramsTask
 
 tasks = TaskList([
-    (START_KEY, SumNSliceTask, 'sumnslice'),
-    ('sumnslice', OnlyDotsTask, 'onlydots'),
-    ('onlydots', OrderedChaosTask, 'orderchaos'),
-    ('orderchaos', FoldNFindTask, 'foldnfind'),
-    ('foldnfind', DictWormTask, 'dictworm'),
-    ('dictworm', LizardSpockTask, 'spockagain'),
-    ('spockagain', AnagramsTask, 'gnaraamy'),
-    # ...
-    ('gnaraamy', WellDone, 'welldone'),
+    (START_KEY, MathRemainsTask, 'mathremains'),
+    ('mathremains', ASubstituteOfTask, 'asubstituteof'),
+    ('asubstituteof', EvenSliceTask, 'evenslice'),
+    ('evenslice', MixStringTask, 'mixstring'),
+    ('mixstring', EntanglingEvenMoreTask, 'entanglingevenmore'),
+    ('entanglingevenmore', WellDone, 'welldone'),
+#    ('entanglingevenmore', SumNSliceTask, 'sumnslice'),
+#    ('sumnslice', OnlyDotsTask, 'onlydots'),
+#    ('onlydots', OrderedChaosTask, 'orderchaos'),
+#    ('orderchaos', FoldNFindTask, 'foldnfind'),
+#    ('foldnfind', DictWormTask, 'dictworm'),
+#    ('dictworm', LizardSpockTask, 'spockagain'),
+#    ('spockagain', AnagramsTask, 'gnaraamy'),
+#    # ...
+#    ('gnaraamy', WellDone, 'welldone'),
 ])
