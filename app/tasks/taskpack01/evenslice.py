@@ -4,9 +4,9 @@ import string
 from ..task import Task
 
 
-def char_gen(dist):
+def char_gen(rnd, dist):
     for _ in range(dist):
-        yield random.choice(string.digits + string.ascii_letters
+        yield rnd.choice(string.digits + string.ascii_letters
             + string.punctuation)
 
 
@@ -28,8 +28,9 @@ class EvenSliceTask(Task):
         rnd.seed(self.seed)
         clean_words = ' '.join(rnd.sample(self.all_words, 3))
 
-        scram = list(zip(list(char_gen(1)) + list(clean_words),
-            list(char_gen(1)) + [char for char in char_gen(len(clean_words))]))
+        scram = list(zip(list(char_gen(rnd, 1)) + list(clean_words),
+            list(char_gen(rnd, 1)) + [char for char in char_gen(rnd,
+            len(clean_words))]))
         data = ''.join([''.join(item) for item in scram])
 
         return data

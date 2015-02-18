@@ -11,7 +11,7 @@ class ASubstituteOfTask(Task):
     połącz je w ciąg postaci "aXbYcZaZbYcX". Przy wartościach typu
     zmiennoprzecinkowego obetnij część ułamkową.
 
-    Przykład: a=1.1, b=2, c=3.4 -> "a1b2c3"
+    Przykład: `a=1.1, b=2, c=3.4 -> "a1b2c3a3b2c1"`
     '''
 
     template = '''\
