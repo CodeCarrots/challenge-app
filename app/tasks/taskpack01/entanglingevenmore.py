@@ -5,12 +5,19 @@ from ..task import Task, format_data
 
 
 class EntanglingEvenMoreTask(Task):
-    '''Mając dwa ciągi `ciag_a` (znaki) oraz `ciag_b` (cyfry) złóż je "na suwak"
+    '''
+    Mając dwa ciągi `ciag_a` (znaki) oraz `ciag_b` (cyfry) złóż je "na suwak"
     tak aby stworzyć układ: znak, liczba, znak, liczba, ..., znak (znak powinien
     być ostatnim elementem po ostatniej dostępnej cyfrze). Jeśli "dostępne znaki
     (`ciag_a`) się skończą" należy zacząć ponownie od pierwszego.
 
-    Przykład: `ciag_a="@->", ciag_b="12345" -> "@1-2>3@4-5>"`
+    Przykład:
+
+        ciag_a="@->"
+        ciag_b="12345"
+
+        # wynik
+        "@1-2>3@4-5>"`
     '''
 
     title = "Entangling even more"
@@ -34,7 +41,6 @@ class EntanglingEvenMoreTask(Task):
 
         return [signs, digits]
 
-
     def challenge(self):
         values = self.generate_data()
         template = self.get_template()
@@ -45,9 +51,7 @@ class EntanglingEvenMoreTask(Task):
             ))
         return ''.join(out_templates)
 
-
     def solutions(self):
         signs, digits = self.generate_data()
         return [''.join([''.join(item) for item in list(zip(signs * len(digits),
             digits * 2))[:len(digits) + 1]])[:-1]]
-

@@ -11,8 +11,7 @@ from ..task import Task, format_data
 class MathRemainsTask(Task):
     '''
     Mając dane wartości zmiennych (a, b, ..., f) oraz wyrażenie w postaci wzoru
-    (poniżej) - wylicz wartość wyrażenia. Odpowiedzią jest część ułamkowa
-    wyniku.
+    (poniżej) - wylicz wartość wyrażenia.
 
     $${}$$
     '''

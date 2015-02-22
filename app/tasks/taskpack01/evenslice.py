@@ -13,6 +13,8 @@ def char_gen(rnd, dist):
 class EvenSliceTask(Task):
     '''Mając ciąg wybierz znaki znajdujące się pod dodatnim i jednocześnie
     parzystym indeksem.
+
+    (Zero nie jest liczbą dodatnią ;)
     '''
 
     title = "Even slice"
