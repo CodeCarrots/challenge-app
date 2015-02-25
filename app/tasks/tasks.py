@@ -13,6 +13,9 @@ class TaskList:
     def __contains__(self, key):
         return key in self._tasks
 
+    def get_all_keys(self):
+        return self._keys.values()
+
     def get_task_key(self, lock):
         return self._keys[lock]
 
