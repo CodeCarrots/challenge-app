@@ -7,11 +7,18 @@ from ..task import Task, format_data
 
 class ASubstituteOfTask(Task):
     '''
-    Mając trzy zmienne (a, b i c) przechowujące wartości liczbowe (X, Y, Z)
-    połącz je w ciąg postaci "aXbYcZaZbYcX". Przy wartościach typu
-    zmiennoprzecinkowego obetnij część ułamkową.
+    Mając trzy zmienne (a, b i c) przechowujące wartości liczbowe (x, y, z)
+    połącz je w ciąg znaków postaci "@x&y^z@z&y^x". Przekształć liczby zmiennoprzecinkowe
+    na całkowite jeżeli będzie taka potrzeba.
 
-    Przykład: `a=1.1, b=2, c=3.4 -> "a1b2c3a3b2c1"`
+    Przykład:
+
+        a=111
+        b=222.2
+        c=333.444
+
+        # wynik:
+        '@111&222^333@333&222^111'
     '''
 
     template = '''\
@@ -49,5 +56,4 @@ class ASubstituteOfTask(Task):
 
     def solutions(self):
         values = self.generate_data()
-        return ['a{0}b{1}c{2}a{2}b{1}c{0}'.format(*map(int, values))]
-
+        return ['@{0}&{1}^{2}@{2}&{1}^{0}'.format(*map(int, values))]

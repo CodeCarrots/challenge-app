@@ -4,11 +4,24 @@ from ..task import Task, format_data
 
 
 class MixStringTask(Task):
-    '''Mając dwa ciągi przepleć je zaczynając od pierwszego znaku pierwszego
+    '''
+    Mając dwa ciągi przepleć je zaczynając od pierwszego znaku pierwszego
     ciągu. Jeśli zabraknie kolejnego znaku do pary (parę tworzą znaki na tych
     samych indeksach z obu ciągów) w którymkolwiek z ciągów - zakończ operację.
 
-    Przykład: `ciag_a="abcd", ciag_b="EFG" -> "aEbFcG"`
+    Przypomnienie:
+
+        len(x) funkcja zwracająca długość x.
+
+    Przykład:
+
+        ciag_a="abcd"
+        ciag_b="EFG"
+
+        #...
+
+        # wynik
+        "aEbFcG"
     '''
 
     title = "Mixstring"
