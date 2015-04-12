@@ -9,6 +9,8 @@ class SumNSliceTask(Task):
     otrzymanej sumy wybierz co drugą cyfrę rozpoczynając od cyfry
     najbardziej znaczącej - wybrane cyfry złącz w jeden ciąg w
     oryginalnej kolejności.
+    
+    Przykład: dla sumy o watości 12345 odpowiedzią będzie 135.
     '''
 
     title = "Sum'n'Slice"
