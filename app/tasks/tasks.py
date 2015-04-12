@@ -77,14 +77,13 @@ tasks = TaskList([
     ('asubstituteof', EvenSliceTask, 'evenslice'),
     ('evenslice', MixStringTask, 'mixstring'),
     ('mixstring', EntanglingEvenMoreTask, 'entanglingevenmore'),
-    ('entanglingevenmore', WellDone, 'welldone'),
-#    ('entanglingevenmore', SumNSliceTask, 'sumnslice'),
-#    ('sumnslice', OnlyDotsTask, 'onlydots'),
-#    ('onlydots', OrderedChaosTask, 'orderchaos'),
-#    ('orderchaos', FoldNFindTask, 'foldnfind'),
-#    ('foldnfind', DictWormTask, 'dictworm'),
-#    ('dictworm', LizardSpockTask, 'spockagain'),
-#    ('spockagain', AnagramsTask, 'gnaraamy'),
-#    # ...
-#    ('gnaraamy', WellDone, 'welldone'),
+    ('entanglingevenmore', SumNSliceTask, 'sumnslice'),
+    ('sumnslice', OnlyDotsTask, 'onlydots'),
+    ('onlydots', OrderedChaosTask, 'orderchaos'),
+    ('orderchaos', FoldNFindTask, 'foldnfind'),
+    ('foldnfind', DictWormTask, 'dictworm'),
+    ('dictworm', LizardSpockTask, 'spockagain'),
+    ('spockagain', AnagramsTask, 'gnaraamy'),
+    # ...
+    ('gnaraamy', WellDone, 'welldone'),
 ])
